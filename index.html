@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> light-dark mode </title>
+    <style>
+        body {
+            transition: 1s;
+            color: black;
+        }
+        .body  {
+            display: flex;
+            justify-content: center;
+        }
+        .light_mode {
+            background-color: white;
+            color: black;
+            background: none;
+            transition: 1s;
+            border-radius: 5px;
+        }
+        .dark_mode {
+            background-color: black;
+            color: white;
+            transition: 1s;
+            border-radius: 5px;
+        }
+        .clickToChangeButton {
+            background-color: white;
+            color: black;
+            font-size: larger;
+            background: none;
+            border: 1px solid white;
+            transition: 1s;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<!--  -->
+    <div class="body">
+        <button class="clickToChangeButton" onclick="changeTextInButton()" id="btn">🌙</button>
+    </div>
+
+
+
+
+
+
+
+
+<!--  -->
+<script>
+    // change a text in button 
+    var changeText = document.getElementById("btn");
+    function changeTextInButton() {
+        if(changeText.textContent === "🌙"){
+            changeText.textContent = "🔆";
+            changeText.style.transition = "2s";
+        } else {
+            changeText.textContent = "🌙";
+            changeText.style.transition = "2s";
+        };
+    }
+    // change mode light => dark, dark => light
+    const mode = document.getElementById("btn");
+    const background = document.body;
+
+    background.addEventListener("click", () => {
+        background.classList.toggle("dark_mode");
+        background.classList.toggle("light_mode");
+    });
+
+</script>
+
+</body>
+</html>
